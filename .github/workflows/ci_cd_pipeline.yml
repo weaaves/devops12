@@ -1,0 +1,67 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: postgres:14.13
+        env:
+          POSTGRES_USER: pm_user
+          POSTGRES_PASSWORD: your_password
+          POSTGRES_DB: project_management
+        options: >-
+          --health-cmd="pg_isready -U user"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-django
+
+      - name: Run Django tests
+        env:
+          DATABASE_URL: postgres://pm_user:your_password@localhost:5432/project_management
+        run: |
+          python manage.py migrate
+          python manage.py test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Angular dependencies
+        run: npm install
+        working-directory: ./frontend
+
+      - name: Build Angular
+        run: npm run build --prod
+        working-directory: ./frontend
