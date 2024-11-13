@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a routerLink="/projects" routerLinkActive="active-link">Projects</a></li>
+    <li><a routerLink="/add-project" routerLinkActive="active-link">Add Project</a></li>
+    <li><a routerLink="/tasks" routerLinkActive="active-link">Tasks</a></li>
+    <li><a routerLink="/add-task" routerLinkActive="active-link">Add Task</a></li>
+    <li><a routerLink="/board" routerLinkActive="active-link">Kanban Board</a></li>
+    <li><a routerLink="/reports" routerLinkActive="active-link">Reports</a></li>
+  </ul>
+
+  <div class="auth-links">
+    <a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active-link">Login</a>
+    <a *ngIf="!isLoggedIn" routerLink="/register" routerLinkActive="active-link">Register</a>
+    <span *ngIf="isLoggedIn" class="username">Hello, {{ username }}</span>
+  </div>
+</nav>
+<router-outlet></router-outlet>

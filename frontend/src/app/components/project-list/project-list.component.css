@@ -1,0 +1,95 @@
+/* Container and Header */
+h2 {
+  font-size: 1.8rem;
+  color: #2b3a42;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f3f4f6;
+}
+
+/* Card Styling */
+.project-card {
+  width: 100%;
+  max-width: 320px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Header and Content */
+mat-card-header {
+  padding: 1.2rem;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #dfe1e5;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b263b;
+}
+
+mat-card-subtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+mat-card-content {
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Card Actions and Buttons */
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #f3f4f6;
+  border-top: 1px solid #dfe1e5;
+}
+
+button[mat-raised-button] {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+}
+
+button[mat-raised-button][color="primary"] {
+  background-color: #1f2937;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+button[mat-raised-button][color="primary"]:hover {
+  background-color: #111827;
+}
+
+button[mat-raised-button][color="warn"] {
+  background-color: #b91c1c;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+button[mat-raised-button][color="warn"]:hover {
+  background-color: #991b1b;
+}

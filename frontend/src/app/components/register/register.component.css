@@ -1,0 +1,70 @@
+/* Контейнер для формы регистрации */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Нейтральный фон для фокусировки на форме */
+}
+
+/* Стиль формы регистрации */
+.register-form {
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Заголовок */
+.register-form h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Поля ввода */
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dfe1e5;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9fafb;
+  transition: border-color 0.3s;
+}
+
+/* Стили для полей при фокусе */
+.register-form input[type="text"]:focus,
+.register-form input[type="password"]:focus,
+.register-form input[type="email"]:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+/* Кнопка */
+.register-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0077b6;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Кнопка при наведении */
+.register-form button:hover {
+  background-color: #005f8e;
+}

@@ -1,0 +1,37 @@
+<h2>Tasks</h2>
+<div class="task-filters">
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by Project</mat-label>
+    <mat-select [(ngModel)]="selectedProject" (selectionChange)="filterTasks()">
+      <mat-option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</mat-option>
+      <mat-option value="">All Projects</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Filter by Priority</mat-label>
+    <mat-select [(ngModel)]="selectedPriority" (selectionChange)="filterTasks()">
+      <mat-option value="High">High</mat-option>
+      <mat-option value="Medium">Medium</mat-option>
+      <mat-option value="Low">Low</mat-option>
+      <mat-option value="">All Priorities</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+
+<div class="task-list">
+  <mat-card *ngFor="let task of tasks" class="task-card" [ngClass]="{ 'overdue': isOverdue(task) }">
+    <mat-card-header>
+      <mat-card-title>{{ task.title }}</mat-card-title>
+      <mat-card-subtitle>Status: {{ task.status }} | Due: {{ task.due_date }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ task.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editTask(task.id)">Edit</button>
+      <button mat-raised-button color="warn" (click)="deleteTask(task.id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

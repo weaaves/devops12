@@ -1,0 +1,89 @@
+/* Заголовок */
+h2 {
+  font-size: 1.8rem;
+  color: #2b3a42;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Карточка формы */
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Поля формы */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+mat-form-field .mat-form-field-outline {
+  color: #2b3a42;
+}
+
+mat-form-field .mat-form-field-label {
+  color: #6b7280;
+}
+
+mat-form-field input,
+mat-form-field textarea,
+mat-form-field select,
+mat-select {
+  color: #1f2937;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Кнопка сохранения */
+button[mat-raised-button] {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-transform: capitalize;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+button[mat-raised-button][color="primary"] {
+  background-color: #1f2937;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+button[mat-raised-button][color="primary"]:hover {
+  background-color: #111827;
+}
+
+/* Дополнительные стили для улучшенного отображения */
+.mat-form-field-outline {
+  border-color: #d1d5db;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #374151;
+}
+
+.mat-select-placeholder,
+.mat-form-field-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.mat-form-field-outline-start {
+  border-color: #dfe1e5;
+}
+
+.mat-select-arrow {
+  color: #1f2937;
+}
+

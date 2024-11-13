@@ -1,0 +1,16 @@
+<h2>Projects</h2>
+<div class="project-list">
+  <mat-card *ngFor="let project of projects" class="project-card">
+    <mat-card-header>
+      <mat-card-title>{{ project.name }}</mat-card-title>
+      <mat-card-subtitle>Dates: {{ project.start_date }} - {{ project.end_date }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ project.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editProject(project.id)">Edit</button>
+      <button mat-raised-button color="warn" (click)="deleteProject(project.id)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

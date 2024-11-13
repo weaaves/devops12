@@ -1,0 +1,68 @@
+/* Контейнер для формы логина */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Светлый фон для контраста */
+}
+
+/* Стиль формы логина */
+.login-form {
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Заголовок */
+.login-form h2 {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Поля ввода */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dfe1e5;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9fafb;
+  transition: border-color 0.3s;
+}
+
+/* Стили для полей при фокусе */
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  border-color: #0077b6; /* Акцентный цвет при фокусе */
+  outline: none;
+}
+
+/* Кнопка */
+.login-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0077b6;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Кнопка при наведении */
+.login-form button:hover {
+  background-color: #005f8e;
+}

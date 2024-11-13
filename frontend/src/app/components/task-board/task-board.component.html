@@ -1,0 +1,32 @@
+<div class="board-container">
+  <div class="task-column" *ngFor="let status of statuses">
+    <div class="column-header">{{ status }}</div>
+    <div
+      cdkDropList
+      [cdkDropListData]="columns[status]"
+      class="task-list"
+      (cdkDropListDropped)="onDrop($event, status)"
+    >
+      <!-- Отображение задач в колонке статуса -->
+      <div
+        *ngFor="let task of columns[status]"
+        cdkDrag
+        class="task-card"
+        [ngClass]="{ 'overdue': isOverdue(task) }"
+        (click)="openTaskDetails(task)"
+      >
+        <div class="task-title">{{ task.title }}</div>
+        <div>{{ task.description }}</div>
+        <div class="task-footer">
+          <span>Due: {{ task.due_date | date }}</span>
+          <button
+            class="status-button"
+            (click)="moveTaskToNextStatus(task); $event.stopPropagation()"
+          >
+            Next Status
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

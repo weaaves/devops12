@@ -1,0 +1,11 @@
+<h2>Детали задачи</h2>
+<p>Task name: {{ task.title }}</p>
+<p>Ответственный: {{ task.assigned_to | json }}</p>
+
+<h3>Комментарии</h3>
+<div *ngFor="let comment of comments">
+  <p>{{ comment.user.username }}: {{ comment.content }}</p>
+</div>
+
+<textarea [formControl]="newComment" placeholder="Добавьте комментарий"></textarea>
+<button (click)="addComment()">Отправить</button>

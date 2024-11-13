@@ -1,0 +1,29 @@
+<h2>Add Project</h2>
+<form (ngSubmit)="onSubmit()">
+  <label for="name">Project Name:</label>
+  <input type="text" id="name" [(ngModel)]="project.name" name="name" required />
+
+  <label for="description">Description:</label>
+  <textarea id="description" [(ngModel)]="project.description" name="description"></textarea>
+
+  <label for="start_date">Start Date:</label>
+  <input type="date" id="start_date" [(ngModel)]="project.start_date" name="start_date" required />
+
+  <label for="end_date">End Date:</label>
+  <input type="date" id="end_date" [(ngModel)]="project.end_date" name="end_date" required />
+
+  <label for="assigned_users">Assign Users:</label>
+  <select
+    id="assigned_users"
+    [(ngModel)]="project.assigned_users"
+    name="assigned_users"
+    multiple
+  >
+    <option *ngFor="let user of users" [ngValue]="user.id">
+      {{ user.username }}
+    </option>
+  </select>
+
+
+  <button type="submit">Create Project</button>
+</form>
