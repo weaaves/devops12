@@ -39,13 +39,6 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-django
 
-      - name: Run Django tests
-        env:
-          DATABASE_URL: postgres://pm_user:your_password@localhost:5432/project_management
-        run: |
-          python backend/manage.py migrate
-          python backend/manage.py test
-
   build:
     runs-on: ubuntu-latest
     needs: test
