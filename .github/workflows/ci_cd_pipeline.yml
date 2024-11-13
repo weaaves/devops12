@@ -43,8 +43,8 @@ jobs:
         env:
           DATABASE_URL: postgres://pm_user:your_password@localhost:5432/project_management
         run: |
-          python manage.py migrate
-          python manage.py test
+          python backend/manage.py migrate
+          python backend/manage.py test
 
   build:
     runs-on: ubuntu-latest
